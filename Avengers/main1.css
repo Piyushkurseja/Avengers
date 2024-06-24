@@ -1,0 +1,309 @@
+/**
+  * BASE STYLES
+*/
+:root {
+    --primary-color: #038655;
+    --secondary-color: #FAA916;
+    --light-color: #F3F3F3;
+    --dark-color: #333;
+    --max-width: 1100px;
+    --category-sports: #F99500;
+    --category-ent: #A66BBE;
+    --category-tech: #009CFF;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: var(--light-color);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+  }
+  
+  p { margin-bottom: 0.75rem; }
+  
+  a { 
+    text-decoration: none;
+    color: var(--dark-color);
+  }
+  
+  ul { list-style: none; }
+  
+  img { width: 100%; }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Staatliches', cursive;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+    letter-spacing: .15rem;
+    word-spacing: .30rem;
+  }
+  
+  /**
+    * Scrollbars
+  */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 15px;
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background-color: rgba(200, 70, 48, 0.6);
+  }
+  
+  ::selection {
+    background-color: rgba(200, 70, 48, 0.4);
+  }
+  
+  /**
+    * UTILITY CLASSES
+  */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  .card {
+    background: #FFF;
+    padding: 2rem;
+  }
+  
+  .bg-light {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+  }
+  
+  .bg-dark {
+    background-color: var(--dark-color);
+    color: #FFF;
+  }
+  
+  .bg-primary {
+    background-color: var(--primary-color);
+    color: #FFF;
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary-color);
+    color: #FFF;
+  }
+  
+  .bg-dark a,
+  .bg-primary a,
+  .bg-secondary a {
+    color: #FFF;
+  }
+  
+  .py-1 { padding: 1.5rem 0; }
+  .py-2 { padding: 2rem 0; }
+  .py-3 { padding: 3rem 0; }
+  
+  .p-1 { padding: 1.5rem; }
+  .p-2 { padding: 2rem; }
+  .p-3 { padding: 3rem; }
+  
+  .l-heading { font-size: 3rem; }
+  .m-heading { font-size: 2.2rem; }
+  .sm-heading { font-size: 1.7rem; }
+  
+  ul.list li {
+    padding: 0.5rem;
+    border-bottom: dotted 1px #444 ;
+  }
+  
+  ul.list li a:hover { color: var(--primary-color); }
+  
+  /**
+    * BUTTONS
+  */
+  .btn {
+    display: inline-block;
+    border: none;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding: .5rem 1.5rem;
+  }
+  
+  .btn-primary { 
+    background-color: var(--primary-color);
+    color: #FFF;
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: #FFF;
+  }
+  
+  .btn-dark {
+    background-color: var(--dark-color);
+    color: #FFF;
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    opacity: 0.7;
+    transition: opacity .3s;
+    cursor: pointer;
+  }
+  
+/**
+  * NAVBAR
+*/
+#navbar {
+    background: #FFF;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  #navbar .container {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+    padding: 1rem 0;
+    align-items: center;
+  }
+  .logo { width: 180px; }
+  
+  #navbar ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #navbar ul li a {
+    padding: .7rem;
+    font-weight: bold;
+  }
+  #navbar ul li a.active {
+    background: var(--primary-color);
+    color: #FFF;
+  }
+  #navbar ul li a:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+  }
+  
+  #navbar .social { justify-self: center; }
+  
+  #navbar .social a { padding: .7rem; }
+
+  /**
+  * SHOWCASE
+*/
+#showcase {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    position: relative;
+    min-height: 50vh;
+  }
+  #showcase:before {
+    background: url('./Images1/Avengers.jpg') no-repeat center center;
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1
+  }
+  
+  #showcase .container {
+    padding: 75px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /**
+  ***Articles styling
+  **/
+  .articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  #home-articles .card-grid:first-child {
+    grid-column: 1/span 2;
+  }
+  #home-articles .card-grid:last-child {
+    grid-column: 2/span 2;
+  }
+
+  #main-footer .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+  
+  #main-footer .container .grid-full {
+    grid-column: 1/span 4;
+  }
+  .grid-full p {
+    background: #444;
+    padding: .4rem;
+    font-size: .8rem;
+    text-align: center;
+  }
+  .hearts {
+    color: red;
+  }
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: .55rem;
+    margin-bottom: .5rem;
+  }
+
+  /** Read More
+  */
+  #read-more {
+    display: grid;
+    padding: 2rem;
+    grid-gap: 2rem;
+    grid-template-columns: 2fr 1fr 1fr;
+    text-align: justify;
+  }
+
+  #read-more>.content {
+    background-color: #FFF;
+    padding: 2rem;
+    grid-column: 1/span 2;
+    text-align: justify;
+  }
+
+  #read-more.list,
+  #read-more .categories {
+    background: #fff;
+    text-align: justify;
+  }
+
+  #join-us {
+    margin-top: 2rem;
+    text-align: justify;
+  }
+
+  #read-more h1 {
+    font-size: 2.5rem;
+    text-align: justify;
+  }
+  
